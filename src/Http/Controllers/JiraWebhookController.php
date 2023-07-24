@@ -12,9 +12,12 @@ use Stichoza\JiraWebhooksData\Models\JiraWebhookData;
 
 class JiraWebhookController extends Controller
 {
+    /**
+     * @throws \Stichoza\JiraWebhooksData\Exceptions\JiraWebhookDataException
+     */
     public function __invoke(Request $request): void
     {
-        $webhook = JiraWebhookData::parse($request->all());
+        $webhook = new JiraWebhookData($request->all());
 
         Collection::make(Config::get('jira-webhooks.events'))
             ->filter(fn(string $event, string $key): bool => Str::is($key, $webhook->getWebhookEvent()))
