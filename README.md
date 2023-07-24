@@ -99,7 +99,6 @@ namespace App\Listeners;
 use App\Events\JiraCommentCreated;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Support\Facades\Log;
 
 class JiraCommentCreatedListener implements ShouldQueue
 {
@@ -107,9 +106,11 @@ class JiraCommentCreatedListener implements ShouldQueue
 
     public function handle(JiraCommentCreated $event): void
     {
-        $title = 'New comment by ' . $event->webhook->comment->author->displayName . ' on issue ' . $event->webhook->issue->key;
+        $title = 'New comment by ' . $event->webhook->comment->author->displayName
+            . ' on issue ' . $event->webhook->issue->key;
 
-        $message = $event->webhook->comment->author->displayName . ' said: ' . $event->webhook->comment->body;
+        $message = $event->webhook->comment->author->displayName
+            . ' said: ' . $event->webhook->comment->body;
 
         // Do something else
     }
