@@ -20,7 +20,7 @@ class JiraWebhookController extends Controller
         $webhook = new JiraWebhookData($request->all());
 
         Collection::make(Config::get('jira-webhooks.events'))
-            ->filter(fn(string $event, string $key): bool => Str::is($key, $webhook->getWebhookEvent()))
+            ->filter(fn(string $event, string $key): bool => Str::is($key, $webhook->webhookEvent))
             ->each(fn($event) => Event::dispatch(new $event($webhook)));
     }
 }
