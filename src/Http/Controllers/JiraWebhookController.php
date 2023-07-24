@@ -12,7 +12,7 @@ use Stichoza\JiraWebhooksData\Models\JiraWebhookData;
 
 class JiraWebhookController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(Request $request): void
     {
         $webhook = JiraWebhookData::parse($request->all());
 
