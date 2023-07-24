@@ -21,5 +21,15 @@
             "name": "Stichoza",
             "email": "me@stichoza.com"
         }
-    ]
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Stichoza\\JiraWebhooksLaravel\\JiraWebhooksLaravelServiceProvider"
+            ],
+            "aliases": {
+                "JiraWebhooks": "Stichoza\\JiraWebhooksLaravel\\JiraWebhooks"
+            }
+        }
+    }
 }
