@@ -10,7 +10,7 @@ class JiraWebhooksLaravelServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../config/jira-webhooks.php' => config_path('jira-webhooks.php'),
-        ], 'jira-webhooks-config');
+        ], 'config');
 
         $this->mergeConfigFrom(__DIR__ . '/../config/jira-webhooks.php', 'jira-webhooks');
     }
