@@ -1,5 +1,9 @@
-# Jira Webhooks Laravel
-Laravel package for interacting with Jira Webhooks
+Jira Webhooks Laravel
+=====================
+
+[![Latest Stable Version](https://img.shields.io/packagist/v/Stichoza/jira-webhooks-laravel.svg)](https://packagist.org/packages/stichoza/jira-webhooks-laravel) [![Total Downloads](https://img.shields.io/packagist/dt/Stichoza/jira-webhooks-laravel.svg)](https://packagist.org/packages/stichoza/jira-webhooks-laravel) [![Downloads Month](https://img.shields.io/packagist/dm/Stichoza/jira-webhooks-laravel.svg)](https://packagist.org/packages/stichoza/jira-webhooks-laravel) [![Petreon donation](https://img.shields.io/badge/patreon-donate-orange.svg)](https://www.patreon.com/stichoza) [![PayPal donation](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/stichoza)
+
+Laravel package for interacting with Jira Webhooks.
 
 ## Installation
 
