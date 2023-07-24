@@ -5,7 +5,7 @@
     "type": "library",
     "require": {
         "php": "^8.2",
-        "stichoza/jira-webhooks-data": "^3.0",
+        "stichoza/jira-webhooks-data": "^5.0",
         "illuminate/support": "^9.18|^10.0"
     },
     "require-dev": {
