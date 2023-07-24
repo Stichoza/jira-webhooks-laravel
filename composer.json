@@ -1,6 +1,7 @@
 {
     "name": "stichoza/jira-webhook-laravel",
     "description": "Laravel package for interacting with Jira Webhooks",
+    "keywords": ["jira", "atlassian", "events", "webhook", "webhooks"],
     "type": "library",
     "require": {
         "php": "^8.2",
