@@ -30,7 +30,7 @@ If you want to use facade for routes, add this to aliases in you `config/app.php
 
 ### Export Configuration Files
 
-Copy the package config to your local config with the publish command:
+_(Optional)_ If you want to customize events dispatched by the package, copy the package config to your local config with the publish command:
 
 ```bash
 php artisan vendor:publish --provider="Stichoza\JiraWebhooksLaravel\JiraWebhooksLaravelServiceProvider" --tag=config
