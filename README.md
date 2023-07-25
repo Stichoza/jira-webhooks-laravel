@@ -62,9 +62,61 @@ protected $except = [
 ```
 ## Usage
 
-By default, the package will trigger `Stichoza\JiraWebhooksLaravel\Events\JiraWebhookReceived` event for any incoming webhooks. You can customize this by adding different events in `config/jira-webhooks.php` file. These are regular events that you can create by `php artisan make:event` command. 
+By default, the package will dispatch `Stichoza\JiraWebhooksLaravel\Events\JiraWebhookReceived` event for any incoming webhook along with a specific event depending on the `webhookEvent` of webhook received.
+
+### Using Events
+
+Here is the table of Jira `webhookEvent` event names and respective events dispatched by this package:
+
+| Jira event name                  | Event dispatched by this package           |
+|----------------------------------|--------------------------------------------|
+| * (any webhook)                  | `JiraWebhookReceived`                      |
+| jira:issue_created               | `JiraWebhookJiraIssueCreated`              |
+| jira:issue_updated               | `JiraWebhookJiraIssueUpdated`              |
+| jira:issue_deleted               | `JiraWebhookJiraIssueDeleted`              |
+| jira:worklog_updated             | `JiraWebhookJiraWorklogUpdated`            |
+| issuelink_created                | `JiraWebhookIssueLinkCreated`              |
+| issuelink_deleted                | `JiraWebhookIssueLinkDeleted`              |
+| worklog_created                  | `JiraWebhookWorklogCreated`                |
+| worklog_updated                  | `JiraWebhookWorklogUpdated`                |
+| worklog_deleted                  | `JiraWebhookWorklogDeleted`                |
+| comment_created                  | `JiraWebhookCommentCreated`                |
+| comment_updated                  | `JiraWebhookCommentUpdated`                |
+| comment_deleted                  | `JiraWebhookCommentDeleted`                |
+| project_created                  | `JiraWebhookProjectCreated`                |
+| project_updated                  | `JiraWebhookProjectUpdated`                |
+| project_deleted                  | `JiraWebhookProjectDeleted`                |
+| jira:version_released            | `JiraWebhookJiraVersionReleased`           |
+| jira:version_unreleased          | `JiraWebhookJiraVersionUnreleased`         |
+| jira:version_created             | `JiraWebhookJiraVersionCreated`            |
+| jira:version_moved               | `JiraWebhookJiraVersionMoved`              |
+| jira:version_updated             | `JiraWebhookJiraVersionUpdated`            |
+| jira:version_deleted             | `JiraWebhookJiraVersionDeleted`            |
+| user_created                     | `JiraWebhookUserCreated`                   |
+| user_updated                     | `JiraWebhookUserUpdated`                   |
+| user_deleted                     | `JiraWebhookUserDeleted`                   |
+| option_voting_changed            | `JiraWebhookOptionVotingChanged`           |
+| option_watching_changed          | `JiraWebhookOptionWatchingChanged`         |
+| option_unassigned_issues_changed | `JiraWebhookOptionUnassignedIssuesChanged` |
+| option_subtasks_changed          | `JiraWebhookOptionSubtasksChanged`         |
+| option_attachments_changed       | `JiraWebhookOptionAttachmentsChanged`      |
+| option_issuelinks_changed        | `JiraWebhookOptionIssueLinksChanged`       |
+| option_timetracking_changed      | `JiraWebhookOptionTimeTrackingChanged`     |
+| sprint_created                   | `JiraWebhookSprintCreated`                 |
+| sprint_deleted                   | `JiraWebhookSprintDeleted`                 |
+| sprint_updated                   | `JiraWebhookSprintUpdated`                 |
+| sprint_started                   | `JiraWebhookSprintStarted`                 |
+| sprint_closed                    | `JiraWebhookSprintClosed`                  |
+| board_created                    | `JiraWebhookBoardCreated`                  |
+| board_updated                    | `JiraWebhookBoardUpdated`                  |
+| board_deleted                    | `JiraWebhookBoardDeleted`                  |
+| board_configuration_changed      | `JiraWebhookBoardConfigurationChanged`     |
+
+> **Note:** Default events are in `Stichoza\JiraWebhooksLaravel\Events` namespace.
 
 ### Defining Custom Events
+
+You can extend or customize event map by adding different events in `config/jira-webhooks.php` file. These are regular events that you can create by `php artisan make:event` command.
 
 ```php
 'events' => [
