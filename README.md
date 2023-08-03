@@ -112,7 +112,8 @@ Here is the table of Jira `webhookEvent` event names and respective events dispa
 | board_deleted                    | `JiraWebhookBoardDeleted`                  |
 | board_configuration_changed      | `JiraWebhookBoardConfigurationChanged`     |
 
-> **Note:** Default events are in `Stichoza\JiraWebhooksLaravel\Events` namespace.
+> **Note**
+> Default events are in `Stichoza\JiraWebhooksLaravel\Events` namespace.
 
 ### Defining Custom Events
 
@@ -133,7 +134,8 @@ All events will receive the `Stichoza\JiraWebhooksData\Models\JiraWebhookData` o
 
 The keys are checked against Jira's webhook event name (webhookEvent property)  using `Str::is()` method, so you can use wildcards in names. You can find the full list of [Jira webhook event names here](https://developer.atlassian.com/server/jira/platform/webhooks/#registering-events-for-a-webhook).
 
-> **Note:** All events matching the pattern will be triggered, not just the first one.
+> **Note**
+> All events matching the pattern will be triggered, not just the first one.
 
 ### Handling Events
 
